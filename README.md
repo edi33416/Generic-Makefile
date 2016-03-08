@@ -1,14 +1,14 @@
 # Makefile
 Generic Makefile for C/C++ programs.
 
-1. INSTALL
+INSTALL
 
 Download the repository in $HOME/.makefile and add the following line in your
 .bashrc file.
 
 alias cp-makefile='~/.makefile/gen-makefile.sh'
 
-2. USAGE
+USAGE
 
 To create a Makefile in the current directory you can use the following
 commands:
@@ -26,7 +26,7 @@ commands:
 
     Use make to create the binaries and make run to start it.
 
-3. TODOs
+TODOs
 
 For next steps consider adding support:
 
