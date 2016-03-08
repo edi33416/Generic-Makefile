@@ -1,0 +1,37 @@
+# compiler used
+CC = clang
+
+# compiling flags
+CFLAGS = -Wall -g
+
+# linker used
+LINKER = clang -o
+
+# linker flags
+LFLAGS = -Wall
+
+#change these to set the proper directories where each file should be
+SRCDIR = src
+OBJDIR = obj
+BINDIR = bin
+
+SOURCES := $(wildcard $(SRCDIR)/*.c)
+INCLUDES := $(wildcard $(SRCDIR)/.h)
+OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+$(BINDIR)/$(TARGET): $(OBJECTS)
+	@$(LINKER) $@ $(LFLAGS) $(OBJECTS)
+	@echo "Linking complete!"
+
+$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "Complied "$<" successfully!"
+
+run:
+	./$(BINDIR)/$(TARGET)
+
+init:
+	@mkdir "src" "obj" "bin"
+
+clean:
+	rm -rf $(OBJECTS) $(BINDIR)/$(TARGET)
