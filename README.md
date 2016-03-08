@@ -6,7 +6,7 @@ INSTALL
 Download the repository in $HOME/.makefile and add the following line in your
 .bashrc file.
 
-alias cp-makefile='~/.makefile/gen-makefile.sh'
+alias cp-makefile='~/.makefile/Generic-Makefile/gen-makefile.sh'
 
 USAGE
 
